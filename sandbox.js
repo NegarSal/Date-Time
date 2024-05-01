@@ -17,32 +17,54 @@
 // console.log(now.toTimeString());
 // console.log(now.toLocaleString());
 
-// timestamps
+// // timestamps
+// const now = new Date();
+// console.log('timestamp:', now.getTime());
+
+//  const before = new Date('Febuary 1 2024 7:30:59');
+// console.log(now.getTime(), before);
+// console.log(now.getTime(), before.getTime());
+
+// // difference between 2 Dates in ms:
+// const diff = now.getTime() - before.getTime();
+// console.log(diff);
+
+// // difference between 2 Dates in min:
+// const mins = Math.round(diff / 1000 / 60);
+// console.log(mins);
+
+// // difference between 2 Dates in hr:
+// const hours = Math.round(mins / 60);
+// console.log(hours);
+
+// // difference between 2 Dates in days:
+// const days = Math.round(hours / 24);
+// console.log(days);
+
+// console.log(`The blog was written ${days}days ago`);
+
+// // converting timestamps into date objects:
+// const timestamp = 1675938474990;
+// console.log(new Date(timestamp));
+
+
 const now = new Date();
-console.log('timestamp:', now.getTime());
+//console.log(dateFns.isToday(now));
 
- const before = new Date('Febuary 1 2024 7:30:59');
-console.log(now.getTime(), before);
-console.log(now.getTime(), before.getTime());
+// formatting options:
+// Year:
+console.log(dateFns.format(now, 'yyyy'));
+// Month:
+console.log(dateFns.format(now, 'MMMM'));
+// shorter Month:
+console.log(dateFns.format(now, 'MMM'));
+// Day:
+console.log(dateFns.format(now, 'E'));
+// Date:
+console.log(dateFns.format(now, 'do'));
+// combination:
+console.log(dateFns.format(now, 'E, do, MMMM, yyyy'));
 
-// difference between 2 Dates in ms:
-const diff = now.getTime() - before.getTime();
-console.log(diff);
-
-// difference between 2 Dates in min:
-const mins = Math.round(diff / 1000 / 60);
-console.log(mins);
-
-// difference between 2 Dates in hr:
-const hours = Math.round(mins / 60);
-console.log(hours);
-
-// difference between 2 Dates in days:
-const days = Math.round(hours / 24);
-console.log(days);
-
-console.log(`The blog was written ${days}days ago`);
-
-// converting timestamps into date objects:
-const timestamp = 1675938474990;
-console.log(new Date(timestamp));
+// comparing dates:
+const before = new Date('Febuary 1 2024 12:00:00');
+console.log(dateFns.formatDistance(before, now, { addSuffix: true }));
